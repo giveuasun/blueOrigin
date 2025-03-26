@@ -1,0 +1,11 @@
+【1】FIRSR：performs single-rate FIR filtering of a source vector 正儿八经滤波时才会调用
+before using this func,you need to initialize the internal constant specification structure using the ippsFIRSRInit func.
+
+【2】FIRSRInit：initializes the FIR constant stucture for single-rate FIR filtering 用于生成滤波器固有结构
+before using this, you need to compute the work buffer and structure buffer by using ippsFIRSRGetSize func.
+
+【3】FIRSRGetSize 计算工作空间用
+
+【4】FIRGenLowpass 生成低通滤波器系数
+
+【5】FIRGenGetBufferSize 建立生成工作空间

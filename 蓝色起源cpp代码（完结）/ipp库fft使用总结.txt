@@ -1,0 +1,10 @@
+FFTFwd_CToC()
+descirption: computes the forward fast fourier transform of a complex signal.
+这个是fft的最后执行函数，输入与输出都是复信号。输入信号必须是2的幂次
+举例一个常用调用方式：
+ippsFFTFwd_CToC_32fc(pSrc,pDst,fft结构,工作buf)
+
+fft结构是fft运行的关键，生成fft结构需要用到fftinit_C()函数，
+
+fft工作buffer的申请可以更好的实现高速计算，需要用到函数FFTGetSize_C()
+他会计算出三个空间出来，全部都留下比较好，毕竟不清楚他们生命周期有多长

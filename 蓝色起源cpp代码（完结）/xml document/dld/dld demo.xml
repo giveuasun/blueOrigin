@@ -1,0 +1,29 @@
+<!--我随便加了一行注释-->
+<dld>
+    <!-- 版本号 -->
+    <dldVersion>1.0</dldVersion>
+    <!-- 基本信息 -->
+    <info>
+        <display>ASK(188-181)</display>
+        <kind>digital</kind>
+    </info>  
+    <!-- 拓展信息 -->
+    <advance>
+        <ambiguity></ambiguity>
+        <!--我随便加了一行注释-->
+    </advance>
+    <!-- 约束条件 -->
+    <constraint>
+        <bw></bw>
+    </constraint>
+    <!-- 许可证 -->
+    <license>
+        <feature></feature>
+        <depends></depends>
+    </license>
+    <!-- 参数设置 -->
+    <parameter>
+        <buffersize></buffersize>
+    </parameter>
+    <!--我随便加了一行注释-->
+</dld>

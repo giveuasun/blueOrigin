@@ -1,0 +1,50 @@
+copy 复制，把a指针引导的数组复制到b指针
+set 赋值，对a指针引导的数组进行自定义赋值
+malloc 申请堆内存 根据所需要的数据类型和长度进行内存申请
+free 释放已用指针，自动识别长度无须输入需释放长度
+
+StdDev 计算数组标准差，和matlab  std(arr)计算结果一致
+DivC 除法
+Normalize 归一化，数组中的各个元素先减去sub，再除以dev
+convert 数据类型转换，类似强制转换，在新数组中重新赋值
+RealToCplx 返回由两路实数据构成的复数据。本质上是重新排列数据顺序。
+CplxToReal 把一路复数据输出成两路实数据。
+tone 生成单音信号，根据设定幅度，归一化频率和初相，例：A*cos(2*pi*n*F+P)
+conj 取其共轭
+mul 两个向量逐元素相乘，[1 2 3]mul[1 2 3]=[1 4 9]
+mulc 一个向量中的元素与一个常量相乘
+abs 取绝对值
+goertz Goertzel算法由Gerald Goertzel在1958年提出，用于数字信号处理，属于离散傅里叶变换的范畴，目的是从给定的采样中求出某一特定频率信号的能量，用于有效性的评价。
+
+FIRGenlowpass 生成低通FIR滤波器系数，taps抽头，就是我们需要的低通滤波器系数
+FIRGenGetBufferSize 申请genlowpass过程的缓存。没有实际作用，辅助用。
+
+FIRSRInit 初始化单速滤波固有结构，单速（输入采样率=输出采样率）。固有结构的数据类型是IppsFIRSpec，这个类型是保密的，无法窥探，会使用即可。
+FIRSRGetSize 辅助函数，计算固有结构大小，以及工作缓存
+FIRSR 使用滤波器，使用之前已经生成好的各种参数对信号进行滤波。
+sub 作减法，两个向量逐元素相减
+magnitude 计算复信号模长，(re^2+im^2)^.5
+meanStdDev 计算向量的平均值和标准差
+zero 初始化全零数组
+flip 数组翻转
+crossCorrNorm 计算两向量的互相关值
+sampleDown 下采样，可以设置下采样起点
+move 移动一个向量的元素到另外一个，和copy的作用几乎一模一样
+maxIndx 返回当前向量的最大值和该值的索引，最大值是第一个遇到的最大值，索引是从零开始，符合cpp数组索引语法，不符合matlab的索引。
+powerSpectr 计算一个复信号的能量，模的平方
+sum 求和，对本向量的所有元素求和
+
+FIRSparse 通过稀疏滤波器，对信号滤波，稀疏滤波器与稀疏矩阵概念一致，使用该函数时，需要调用稀疏滤波器固有结构，该结构由其他辅助函数生成。
+FIRSparseInit 生成稀疏滤波器固有结构：主要负责记录非零元素值及非零元素值索引，然后生成结构，初始化时候同样可以设置dlyline，nullptr则默认为全零。
+FIRSparseGetStateSize 属于init函数的辅助函数：负责生成init函数的工作缓冲，order是阶数，是包含零元素的数组全长-1，然后生成了buffer的大小，根据这个长度再计算缓冲堆内存。
+FIRSparseGetDlyLine 获取当前稀疏滤波器固有结构的前空段，如果已经结束计算，那么该line中存储的是信号的末尾几个数据。
+FIRSparseSetDlyLine 设置当前稀疏滤波器固有结构的前空段，前空段的长度自然是滤波器系数长度减一。
+
+FFTFwd_CToC 对一个复信号做正快速傅里叶变换，需要注意的是fft长度只能是2的幂。
+
+convert_16s32f_sfs scalefactor是缩放因子，会在最后的结果处乘以2^(-sfs)
+
+PolarToCart 极坐标转换笛卡尔坐标
+
+dotprod 两个向量作点积——元素逐个相乘再求和。
+
